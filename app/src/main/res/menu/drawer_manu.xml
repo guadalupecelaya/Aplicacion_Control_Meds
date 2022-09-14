@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item android:id="@+id/nav_medicamento"
+            android:icon="@drawable/ic_medical_services"
+            android:title="Medicamentos" />
+        <item android:id="@+id/nav_enfermedades"
+            android:icon="@drawable/ic_hospital_24"
+            android:title="Enfermedades" />
+        <item android:id="@+id/nav_liquido"
+            android:icon="@drawable/ic_liquido"
+            android:title="Control de liquidos" />
+        <item android:id="@+id/nav_Alarma"
+            android:icon="@drawable/ic_campana"
+            android:title="Alarma" />
+        <item android:id="@+id/nav_estado"
+            android:icon="@drawable/ic_elderly_24"
+            android:title="Control de estado" />
+
+
+    </group>
+
+    <item android:title="Opciones">
+        <menu>
+            <item android:id="@+id/nav_perfil"
+                android:icon="@drawable/ic_baseline_person_24"
+                android:title="Perfil" />
+            <item android:id="@+id/nav_configuracion"
+                android:icon="@drawable/ic_cambios"
+                android:title="configuracion" />
+            <item android:id="@+id/nav_logout"
+                android:icon="@drawable/ic_exit_to_app_24"
+                android:title="Salida" />
+            <item android:id="@+id/nav_opciones"
+                android:icon="@drawable/ic_help_24"
+                android:title="Opciones" />
+
+        </menu>
+
+    </item>
+
+</menu>
