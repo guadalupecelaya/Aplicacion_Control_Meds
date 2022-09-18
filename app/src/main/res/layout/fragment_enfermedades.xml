@@ -10,4 +10,17 @@
         android:textSize="30sp"
         android:layout_centerInParent="true"/>
 
+    <Button
+        android:id="@+id/btn_registrar_enf"
+        android:layout_width="62dp"
+        android:layout_height="61dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="37dp"
+        android:layout_marginBottom="28dp"
+        android:background="@color/darkGreen"
+        android:text="+"
+        android:textColor="@color/white"
+        android:textSize="48sp" />
+
 </RelativeLayout>

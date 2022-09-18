@@ -8,4 +8,7 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="darkGreen">#009688</color>
+    <color name="gris">#bbbbbb</color>
+    <color name="azulVioleta">#797ef6</color>
+    <color name="AzulOsculoP">#1e2f97</color>
 </resources>

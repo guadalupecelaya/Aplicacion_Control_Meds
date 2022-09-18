@@ -8,39 +8,41 @@
     tools:context=".Register">
 
     <androidx.appcompat.widget.Toolbar
-        android:id="@+id/my_toolbar"
+        android:id="@+id/my_toolbar_enf"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         android:background="?attr/colorPrimary"
         android:elevation="4dp"
         android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
-        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"/>
+        app:layout_constraintTop_toTopOf="parent"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        tools:layout_editor_absoluteX="25dp" />
+
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Nuevo Medicamento"
+        android:layout_width="321dp"
+        android:layout_height="54dp"
+        android:text="Nueva enfermedad"
         android:textAppearance="@style/TextAppearance.AppCompat.Body2"
         android:textColor="@color/teal_700"
         android:textSize="26sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.292"
+        app:layout_constraintHorizontal_bias="0.388"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.11" />
-
+        app:layout_constraintVertical_bias="0.122" />
 
     <EditText
-        android:id="@+id/PT_nom_medicamento"
+        android:id="@+id/PT_nom_enfermedad"
         android:layout_width="343dp"
         android:layout_height="52dp"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
         android:background="@drawable/style_bordes_editext"
         android:ems="10"
-        android:hint="Nombre"
+        android:hint="Nombre de la enfermedad"
         android:inputType="textPersonName"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -50,7 +52,7 @@
         app:layout_constraintVertical_bias="0.231" />
 
     <EditText
-        android:id="@+id/PT_ap_mg"
+        android:id="@+id/PT_fecha_diagnostico"
         android:layout_width="343dp"
         android:layout_height="52dp"
         android:layout_marginStart="16dp"
@@ -58,7 +60,7 @@
         android:layout_marginBottom="452dp"
         android:background="@drawable/style_bordes_editext"
         android:ems="10"
-        android:hint="Mg"
+        android:hint="Fecha de diagnostico"
         android:inputType="text|number"
         android:minHeight="38dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -66,14 +68,14 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
-        android:id="@+id/PT_fabricante"
+        android:id="@+id/PT_Sintomas"
         android:layout_width="343dp"
         android:layout_height="52dp"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
         android:background="@drawable/style_bordes_editext"
         android:ems="10"
-        android:hint="Farmaceutica"
+        android:hint="Sintomas"
         android:inputType="textPersonName"
         android:minHeight="48dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -84,7 +86,7 @@
         app:layout_constraintVertical_bias="0.435" />
 
     <EditText
-        android:id="@+id/PT_via"
+        android:id="@+id/PT_precauciones"
         android:layout_width="344dp"
         android:layout_height="52dp"
         android:layout_marginStart="16dp"
@@ -92,7 +94,7 @@
         android:layout_marginBottom="316dp"
         android:background="@drawable/style_bordes_editext"
         android:ems="10"
-        android:hint="Via de administracion"
+        android:hint="Precauciones"
         android:inputType="textPersonName"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -100,7 +102,7 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
-        android:id="@+id/PT_uso"
+        android:id="@+id/PT_medicamentos_comunes"
         android:layout_width="343dp"
         android:layout_height="52dp"
         android:layout_marginStart="16dp"
@@ -108,7 +110,7 @@
         android:layout_marginBottom="244dp"
         android:background="@drawable/style_bordes_editext"
         android:ems="10"
-        android:hint="Padecimiento"
+        android:hint="Medicamentos comunes"
         android:inputType="textPersonName"
         android:minHeight="48dp"
         app:layout_constraintBottom_toBottomOf="parent"

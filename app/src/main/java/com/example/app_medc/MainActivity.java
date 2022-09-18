@@ -11,6 +11,7 @@ import android.view.View;
 import android.widget.Button;
 import android.content.Intent;
 import android.os.Bundle;
+import android.widget.Toast;
 
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.FirebaseApp;
@@ -28,6 +29,26 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        Bundle bundle= getIntent().getExtras();
+        if(bundle!=null){
+            if(bundle.getString("some")!=null){
+                Toast.makeText(getApplicationContext(),"data:"+bundle.getString("some"), Toast.LENGTH_SHORT).show();
+            }
+        }
+
+
+
+        //prueba fragments
+        /*
+        Medicamentos meds = new Medicamentos();
+        Bundle args = new Bundle();
+        args.putString("argText", "example text");
+        args.putInt("argNumber",123);
+        meds.setArguments(args);
+        getSupportFragmentManager().beginTransaction().replace(R.id.btn_nuevo_med, meds).commit();
+        */
+
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         //setSupportActionBar(toolbar);
