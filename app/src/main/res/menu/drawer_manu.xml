@@ -4,6 +4,9 @@
     tools:showIn="navigation_view">
 
     <group android:checkableBehavior="single">
+        <item android:id="@+id/nav_Alarma"
+        android:icon="@drawable/ic_campana"
+        android:title="Alarma" />
         <item android:id="@+id/nav_medicamento"
             android:icon="@drawable/ic_medical_services"
             android:title="Medicamentos" />
@@ -13,9 +16,6 @@
         <item android:id="@+id/nav_liquido"
             android:icon="@drawable/ic_liquido"
             android:title="Control de liquidos" />
-        <item android:id="@+id/nav_Alarma"
-            android:icon="@drawable/ic_campana"
-            android:title="Alarma" />
         <item android:id="@+id/nav_estado"
             android:icon="@drawable/ic_elderly_24"
             android:title="Control de estado" />
@@ -23,6 +23,7 @@
 
     </group>
 
+    <group android:checkableBehavior="single">
     <item android:title="Opciones">
         <menu>
             <item android:id="@+id/nav_perfil"
@@ -33,7 +34,7 @@
                 android:title="configuracion" />
             <item android:id="@+id/nav_logout"
                 android:icon="@drawable/ic_exit_to_app_24"
-                android:title="Salida" />
+                android:title="Cerrar sesion" />
             <item android:id="@+id/nav_opciones"
                 android:icon="@drawable/ic_help_24"
                 android:title="Opciones" />
@@ -41,5 +42,6 @@
         </menu>
 
     </item>
+    </group>
 
 </menu>

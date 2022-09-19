@@ -39,16 +39,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
 
 
-        //prueba fragments
-        /*
-        Medicamentos meds = new Medicamentos();
-        Bundle args = new Bundle();
-        args.putString("argText", "example text");
-        args.putInt("argNumber",123);
-        meds.setArguments(args);
-        getSupportFragmentManager().beginTransaction().replace(R.id.btn_nuevo_med, meds).commit();
-        */
-
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         //setSupportActionBar(toolbar);
@@ -95,6 +85,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             case R.id.nav_liquido:
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
                         new Liquido()).commit();
+                break;
+            case R.id.nav_logout:
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
+                        new Dialogo_salida()).commit();
                 break;
 
         }

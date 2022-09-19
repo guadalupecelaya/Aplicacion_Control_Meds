@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/guada/AndroidStudioProjects/app_medC/app/src/main/res/drawable/round_button.xml" value="0.1325" />
         <entry key="..\:/Users/guada/AndroidStudioProjects/app_medC/app/src/main/res/drawable/style_bordes_editext.xml" value="0.155" />
         <entry key="..\:/Users/guada/AndroidStudioProjects/app_medC/app/src/main/res/drawable/style_boton_mas.xml" value="0.1245" />
         <entry key="..\:/Users/guada/AndroidStudioProjects/app_medC/app/src/main/res/layout-w936dp/activity_registro_enf.xml" value="0.21" />
@@ -14,6 +15,7 @@
         <entry key="..\:/Users/guada/AndroidStudioProjects/app_medC/app/src/main/res/layout/activity_registro_med.xml" value="0.25" />
         <entry key="..\:/Users/guada/AndroidStudioProjects/app_medC/app/src/main/res/layout/fragment_C_liquidos.xml" value="0.19021739130434784" />
         <entry key="..\:/Users/guada/AndroidStudioProjects/app_medC/app/src/main/res/layout/fragment_alarmas.xml" value="0.19021739130434784" />
+        <entry key="..\:/Users/guada/AndroidStudioProjects/app_medC/app/src/main/res/layout/fragment_dialogo_salida.xml" value="0.15217391304347827" />
         <entry key="..\:/Users/guada/AndroidStudioProjects/app_medC/app/src/main/res/layout/fragment_enfermedades.xml" value="0.19021739130434784" />
         <entry key="..\:/Users/guada/AndroidStudioProjects/app_medC/app/src/main/res/layout/fragment_estado.xml" value="0.19021739130434784" />
         <entry key="..\:/Users/guada/AndroidStudioProjects/app_medC/app/src/main/res/layout/fragment_liquidos.xml" value="0.19021739130434784" />
