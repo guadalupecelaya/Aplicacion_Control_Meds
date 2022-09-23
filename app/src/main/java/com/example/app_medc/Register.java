@@ -12,10 +12,12 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class Register extends AppCompatActivity {
     EditText mNombre, mAppaterno, mApmaterno, mEmail, mPassword, mPassword2;
+    //TextInputEditText mNombre, mAppaterno, mApmaterno, mEmail, mPassword, mPassword2;
     Button BtnRegistrar;
     TextView mLoginBtn;
     FirebaseAuth fAuth;

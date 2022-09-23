@@ -25,11 +25,22 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.RecyclerView;
+
+import java.util.ArrayList;
 
 public class Medicamentos extends Fragment {
     EditText nom_med, ingesta, mg, farmaceutica, padecimiento;
     Button btn_med_registro;
+    private FirebaseAuth firebaseDatabase;
+    private DatabaseReference databaseReference;
+    private ArrayList<MedicamentosRVModal> medicamentosRVModalArrayList;
+    private MedicamentosAdapter medicamentosAdapter;
+    private RecyclerView medicamentoRV;
+
     String text;
      int number;
 

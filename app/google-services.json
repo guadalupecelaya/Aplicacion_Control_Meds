@@ -1,33 +1,34 @@
 {
   "project_info": {
-    "project_number": "159195665105",
-    "project_id": "app-medc",
-    "storage_bucket": "app-medc.appspot.com"
+    "project_number": "282650824867",
+    "firebase_url": "https://aplicacion-control-medico-default-rtdb.firebaseio.com",
+    "project_id": "aplicacion-control-medico",
+    "storage_bucket": "aplicacion-control-medico.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:159195665105:android:1ab3a290660ef01a26abf0",
+        "mobilesdk_app_id": "1:282650824867:android:ddb0b83d9cc7f931f92f16",
         "android_client_info": {
           "package_name": "com.example.app_medc"
         }
       },
       "oauth_client": [
         {
-          "client_id": "159195665105-rrbnujuftjl3b27k7mg01u8vifmokr1l.apps.googleusercontent.com",
+          "client_id": "282650824867-oqtjl4790f4qb8qkpqq01c43rtidg7l4.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyDTwrMEjY8tk5gVrVZb4vQpZpDC5lX4PxM"
+          "current_key": "AIzaSyBs2ZgVpjgD69M7tiID5OOpp2do_U6DEKY"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "159195665105-rrbnujuftjl3b27k7mg01u8vifmokr1l.apps.googleusercontent.com",
+              "client_id": "282650824867-oqtjl4790f4qb8qkpqq01c43rtidg7l4.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
