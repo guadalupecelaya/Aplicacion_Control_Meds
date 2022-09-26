@@ -18,28 +18,50 @@ public class MedicamentosAdapter extends RecyclerView.Adapter<MedicamentosAdapte
     private ArrayList<MedicamentosRVModal> medicamentosRVModalArrayList;
     private Context context;
     int lastPos = -1;
-    private medicamentosClickInterface MedicamentosClickInterface;
+    //private medicamentosClickInterface MedicamentosClickInterface;
 
 
 
-    public MedicamentosAdapter(ArrayList<MedicamentosRVModal> medicamentosRVModalArrayList, medicamentosClickInterface medicamentosClickInterface, Context context) {
+
+    public static  class MyViewHolder extends RecyclerView.ViewHolder{
+
+        TextView nom_meds, farmaceutica, mg;
+
+
+        public MyViewHolder(@NonNull View itemView) {
+            super(itemView);
+            nom_meds = itemView.findViewById(R.id.nombre_med_list);
+            farmaceutica=itemView.findViewById(R.id.farmaceutica_list);
+            mg=itemView.findViewById(R.id.mg_list);
+        }
+
+
+
+
+
+    }
+
+
+
+    public MedicamentosAdapter(ArrayList<MedicamentosRVModal> medicamentosRVModalArrayList, Context context) {
         this.medicamentosRVModalArrayList = medicamentosRVModalArrayList;
         this.context=context;
-        this.MedicamentosClickInterface = medicamentosClickInterface;
+        //this.MedicamentosClickInterface = medicamentosClickInterface;
     }
 
     @NonNull
     @Override
     public MedicamentosAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View views = LayoutInflater.from(context).inflate(R.layout.medicamento_rv_item,parent,false);
+        View views = LayoutInflater.from(context).inflate(R.layout.list_item,parent,false);
         return new ViewHolder(views);
     }
 
     @Override
     public void onBindViewHolder(@NonNull MedicamentosAdapter.ViewHolder holder, int position) {
         MedicamentosRVModal medicamentoRVModal = medicamentosRVModalArrayList.get(position);
-        holder.nombreMedicamentoTV.setText(medicamentoRVModal.getNombreMedicamento());
-        holder.viaAdministracionTV.setText("Rs. "+medicamentoRVModal.getViaAdministracion());
+        holder.nombreMedicamento.setText(medicamentoRVModal.getNombreMedicamento());
+        holder.farmaceutica.setText(medicamentoRVModal.getFarmaceuticaFabricante());
+        holder.mg_meds.setText(medicamentoRVModal.getCantida());
         //Picasso.get().load(medicamentoRVModal.get)
 
     }
@@ -49,13 +71,13 @@ public class MedicamentosAdapter extends RecyclerView.Adapter<MedicamentosAdapte
         return medicamentosRVModalArrayList.size();
     }
     public class ViewHolder extends RecyclerView.ViewHolder{
-        private TextView nombreMedicamentoTV, viaAdministracionTV;
+        private TextView nombreMedicamento,mg_meds, farmaceutica;
         private ImageView medicamentosIV;
         public ViewHolder(@NonNull View itemView){
             super(itemView);
-            nombreMedicamentoTV = itemView.findViewById(R.id.IdIVMedicamento_nombre);
-            viaAdministracionTV = itemView.findViewById(R.id.IdIViaMed);
-            medicamentosIV=itemView.findViewById(R.id.IdIVMedicamento);
+            nombreMedicamento = itemView.findViewById(R.id.nombre_med_list);
+            farmaceutica = itemView.findViewById(R.id.farmaceutica_list);
+            mg_meds=itemView.findViewById(R.id.mg_list);
 
         }
     }

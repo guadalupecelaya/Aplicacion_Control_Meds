@@ -15,15 +15,17 @@
         <entry key="..\:/Users/guada/AndroidStudioProjects/app_medC/app/src/main/res/layout/activity_perfil.xml" value="0.15217391304347827" />
         <entry key="..\:/Users/guada/AndroidStudioProjects/app_medC/app/src/main/res/layout/activity_register.xml" value="0.22" />
         <entry key="..\:/Users/guada/AndroidStudioProjects/app_medC/app/src/main/res/layout/activity_registro_enf.xml" value="0.22" />
-        <entry key="..\:/Users/guada/AndroidStudioProjects/app_medC/app/src/main/res/layout/activity_registro_med.xml" value="0.25" />
+        <entry key="..\:/Users/guada/AndroidStudioProjects/app_medC/app/src/main/res/layout/activity_registro_med.xml" value="0.1" />
         <entry key="..\:/Users/guada/AndroidStudioProjects/app_medC/app/src/main/res/layout/fragment_C_liquidos.xml" value="0.19021739130434784" />
         <entry key="..\:/Users/guada/AndroidStudioProjects/app_medC/app/src/main/res/layout/fragment_alarmas.xml" value="0.19021739130434784" />
+        <entry key="..\:/Users/guada/AndroidStudioProjects/app_medC/app/src/main/res/layout/fragment_cuidadores.xml" value="0.24" />
         <entry key="..\:/Users/guada/AndroidStudioProjects/app_medC/app/src/main/res/layout/fragment_dialogo_salida.xml" value="0.15217391304347827" />
         <entry key="..\:/Users/guada/AndroidStudioProjects/app_medC/app/src/main/res/layout/fragment_enfermedades.xml" value="0.19021739130434784" />
         <entry key="..\:/Users/guada/AndroidStudioProjects/app_medC/app/src/main/res/layout/fragment_estado.xml" value="0.19021739130434784" />
         <entry key="..\:/Users/guada/AndroidStudioProjects/app_medC/app/src/main/res/layout/fragment_liquidos.xml" value="0.19021739130434784" />
         <entry key="..\:/Users/guada/AndroidStudioProjects/app_medC/app/src/main/res/layout/fragment_medicamentos.xml" value="0.19021739130434784" />
         <entry key="..\:/Users/guada/AndroidStudioProjects/app_medC/app/src/main/res/layout/fragment_perfil.xml" value="0.19021739130434784" />
+        <entry key="..\:/Users/guada/AndroidStudioProjects/app_medC/app/src/main/res/layout/list_item.xml" value="0.33" />
         <entry key="..\:/Users/guada/AndroidStudioProjects/app_medC/app/src/main/res/layout/medicamento_rv_item.xml" value="0.25" />
         <entry key="..\:/Users/guada/AndroidStudioProjects/app_medC/app/src/main/res/layout/nav_header.xml" value="0.1" />
         <entry key="..\:/Users/guada/AndroidStudioProjects/app_medC/app/src/main/res/menu/drawar_manu.xml" value="0.22" />

@@ -121,7 +121,7 @@
         app:layout_constraintVertical_bias="0.642" />
 
     <Button
-        android:id="@+id/btn_registrar_med"
+        android:id="@+id/btn_registrar_enf"
         android:layout_width="123dp"
         android:layout_height="53dp"
         android:layout_marginBottom="116dp"
@@ -137,7 +137,7 @@
         app:layout_constraintVertical_bias="1.0" />
 
     <Button
-        android:id="@+id/btn_registrar_med_cancelar"
+        android:id="@+id/btn_registrar_enf_cancelar"
         android:layout_width="123dp"
         android:layout_height="53dp"
         android:layout_marginBottom="116dp"

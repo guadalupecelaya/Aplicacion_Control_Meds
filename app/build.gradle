@@ -53,7 +53,15 @@ dependencies {
     implementation 'com.squareup.picasso:picasso:2.71828'
     implementation platform('com.google.firebase:firebase-bom:30.4.1')
     implementation 'com.google.firebase:firebase-analytics'
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.5.1"
+    implementation "androidx.lifecycle:lifecycle-runtime-ktx:2.5.1"
+    //implementation "org.jetbrains.kotlin:kotlin-ksp:1.4.0-rc-dev-experimental-20200828"
+    implementation "androidx.room:room-coroutines:2.1.0-alpha04"
+    implementation "org.jetbrains.kotlin:kotlin-symbol-processing-api:1.4.0-rc-dev-experimental-20200828"
 
+    //implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.5.1"
+    //implementation "androidx.lifecycle:lifecycle-runtime-ktx:2.5.1"
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.1'
 
 
 }

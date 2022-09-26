@@ -25,21 +25,27 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
-
+//https://www.youtube.com/watch?v=M8sKwoVjqU0
 public class Medicamentos extends Fragment {
     EditText nom_med, ingesta, mg, farmaceutica, padecimiento;
     Button btn_med_registro;
     private FirebaseAuth firebaseDatabase;
     private DatabaseReference databaseReference;
-    private ArrayList<MedicamentosRVModal> medicamentosRVModalArrayList;
+    private ArrayList<MedicamentosRVModal> medicamentosList;
     private MedicamentosAdapter medicamentosAdapter;
     private RecyclerView medicamentoRV;
+    RecyclerView recyclerView;
 
     String text;
      int number;
@@ -53,6 +59,33 @@ public class Medicamentos extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_medicamentos, container, false);
         btn_med_registro=v.findViewById(R.id.btn_registrar_med);
+        recyclerView=v.findViewById(R.id.recycler_view);
+
+        databaseReference= FirebaseDatabase.getInstance().getReference("Medicamentos");
+        recyclerView.setHasFixedSize(true);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this.getContext()));
+
+        medicamentosList = new ArrayList<>();
+        medicamentosAdapter = new MedicamentosAdapter(medicamentosList,this.getContext());
+        recyclerView.setAdapter(medicamentosAdapter);
+        databaseReference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                for(DataSnapshot dataSnapshot : snapshot.getChildren()){
+                    MedicamentosRVModal medModal = dataSnapshot.getValue((MedicamentosRVModal.class));
+                    medicamentosList.add(medModal);
+
+                }
+                medicamentosAdapter.notifyDataSetChanged();
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+
 
         btn_med_registro.setOnClickListener(new View.OnClickListener() {
             @Override

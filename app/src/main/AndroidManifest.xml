@@ -44,6 +44,10 @@
             android:theme="@style/AppTheme.NoActionBar"
             android:exported="false" />
         <activity
+            android:name=".RegistroEnfermedades"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:exported="false"/>
+        <activity
             android:name=".Salir"
             android:theme="@style/AppTheme.NoActionBar"
             android:exported="false" />

@@ -19,6 +19,9 @@
         <item android:id="@+id/nav_estado"
             android:icon="@drawable/ic_elderly_24"
             android:title="Control de estado" />
+        <item android:id="@+id/nav_cuidadores"
+            android:icon="@drawable/ic_elderly_24"
+            android:title="Cuidadores" />
 
 
     </group>
