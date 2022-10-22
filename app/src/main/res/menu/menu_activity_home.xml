@@ -1,10 +1,31 @@
-<menu xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context="com.example.app_medc.activity_home">
-    <item
-        android:id="@+id/action_settings"
-        android:orderInCategory="100"
-        android:title="@string/action_settings"
-        app:showAsAction="never" />
-</menu>
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@color/AzulOsculoP">
+
+    <TextView
+        android:id="@+id/nombre_med"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="4dp"
+        android:padding="4dp"
+        android:text="Nombre de Medicamento"
+        android:color="@color/black"
+        android:textSize="15sp"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:id="@+id/cantidad"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="4dp"
+        android:padding="4dp"
+        android:text="Nombre de Medicamento"
+        android:color="@color/white"
+        android:textSize="15sp"
+        android:textStyle="bold"/>
+
+
+</RelativeLayout>

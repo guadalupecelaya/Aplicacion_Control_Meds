@@ -48,7 +48,7 @@ public class Medicamentos extends Fragment {
     RecyclerView recyclerView;
 
     String text;
-     int number;
+    int number;
 
 
 
@@ -102,4 +102,3 @@ public class Medicamentos extends Fragment {
         return v;
     }
 }
-

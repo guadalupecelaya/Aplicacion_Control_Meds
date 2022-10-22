@@ -1,6 +1,9 @@
 package com.example.app_medc;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -8,6 +11,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.squareup.picasso.Picasso;
@@ -57,12 +61,78 @@ public class MedicamentosAdapter extends RecyclerView.Adapter<MedicamentosAdapte
     }
 
     @Override
-    public void onBindViewHolder(@NonNull MedicamentosAdapter.ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull MedicamentosAdapter.ViewHolder holder, @SuppressLint("RecyclerView") int position) {
         MedicamentosRVModal medicamentoRVModal = medicamentosRVModalArrayList.get(position);
         holder.nombreMedicamento.setText(medicamentoRVModal.getNombreMedicamento());
         holder.farmaceutica.setText(medicamentoRVModal.getFarmaceuticaFabricante());
         holder.mg_meds.setText(medicamentoRVModal.getCantida());
         //Picasso.get().load(medicamentoRVModal.get)
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                int pos = (int) holder.getAdapterPosition();
+                final Intent intent;
+                //intent =  new Intent(context, MedicamentoEditar.class);
+                intent = new Intent(context, MedicamentoEditar.class);
+                intent.putExtra("nombre", medicamentosRVModalArrayList.get(position).getNombreMedicamento());
+                intent.putExtra("viaAdministracion", medicamentosRVModalArrayList.get(position).getViaAdministracion());
+                intent.putExtra("cantida", medicamentosRVModalArrayList.get(position).getCantida());
+                intent.putExtra("farmaceuticaFabricante", medicamentosRVModalArrayList.get(position).getFarmaceuticaFabricante());
+                intent.putExtra("descripcionUso", medicamentosRVModalArrayList.get(position).getDescripcionUso());
+                System.out.println("pos:" + (pos));
+
+                System.out.println(" ENTRA AL CLICK");
+
+                //alerta para editar o eliminar
+                AlertDialog.Builder alertDialog = new AlertDialog.Builder(v.getContext());
+
+                // Setting Dialog Title
+                alertDialog.setTitle("Opciones: ");
+
+                // Setting Dialog Message
+                alertDialog.setMessage("Desea editar o Eliminar el medicamento?");
+
+                // Setting Icon to Dialog
+                alertDialog.setIcon(R.drawable.button_eliminar);
+
+                // Setting Positive "Yes" Button
+                alertDialog.setPositiveButton("Eliminar", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        final Intent intent;
+                        intent =  new Intent(context, MedicamentoEditar.class);
+                        context.startActivity(intent);
+                    }
+                });
+
+                // Setting Negative "NO" Button
+                alertDialog.setNegativeButton("Editar", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        // Write your code here to invoke NO event
+                        context.startActivity(intent);
+
+                        //dialog.cancel();
+                    }
+                });
+                alertDialog.setNeutralButton("Cancelar", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        // code
+                        dialog.cancel();
+                    }
+                });
+
+
+
+
+                // Showing Alert Message
+                alertDialog.show();
+
+
+                //startActivity(new Intent(RegistroMedicamento.this, MainActivity.class));
+
+                //OnItemClick.onItemClick(pos);
+
+            }
+        });
 
     }
 

@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background_blanco"
-    tools:context=".EditarMedicamento">
+    tools:context=".MedicamentoEditar">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/my_toolbar"
@@ -144,7 +144,7 @@
         android:layout_height="53dp"
         android:layout_marginBottom="116dp"
         android:background="@color/darkGreen"
-        android:text="Eliminar"
+        android:text="Cancelar"
         android:textColor="@color/white"
 
         app:cornerRadius="20dp"

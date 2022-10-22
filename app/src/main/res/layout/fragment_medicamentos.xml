@@ -5,12 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:text="Campo de medicamentos"
-        android:textSize="30sp" />
+
 
     <Button
         android:id="@+id/btn_registrar_med"
@@ -29,6 +24,6 @@
         android:id="@+id/recycler_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:listitem="@layout/list_item"/>
+        tools:listitem="@layout/list_item" />
 
 </RelativeLayout>

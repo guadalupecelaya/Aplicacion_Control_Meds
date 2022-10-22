@@ -10,6 +10,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -25,6 +26,7 @@ public class RegistroMedicamento extends AppCompatActivity {
     DatabaseReference databaseReference;
     private String medicamentoID;
     int number;
+    RecyclerView recyclerView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +40,11 @@ public class RegistroMedicamento extends AppCompatActivity {
         btn_med_registro=findViewById(R.id.btn_registrar_med);
         firebaseDatabase = FirebaseDatabase.getInstance();
         databaseReference=firebaseDatabase.getReference("Medicamentos");
+
+
+        recyclerView = findViewById(R.id.recycler_view);
+
+
 
         btn_med_registro.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -78,5 +85,16 @@ public class RegistroMedicamento extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(), "data:" + bundle.getString("some"), Toast.LENGTH_SHORT).show();
             }
         }
+        System.out.println(" ANTES DEL CLICK");
+// LISTA DE MEDICAMENTOS
+        recyclerView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                System.out.println(" ENTRA AL CLICK");
+                startActivity(new Intent(RegistroMedicamento.this, MainActivity.class));
+            }
+        });
+
+
     }
 }

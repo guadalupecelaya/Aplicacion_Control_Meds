@@ -37,9 +37,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             }
         }
 
-
-
-
         Toolbar toolbar = findViewById(R.id.toolbar);
         //setSupportActionBar(toolbar);
 
@@ -75,8 +72,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                         new Estado()).commit();
                 break;
             case R.id.nav_perfil:
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                        new Perfil()).commit();
+                setContentView(R.layout.activity_perfil);
+                Intent newAct = new Intent(this, Perfil.class);
+                startActivity(new Intent(MainActivity.this, ProfileAct.class));
+                //getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
+                  //      new Perfil()).commit();
                 break;
             case R.id.nav_Alarma:
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
@@ -87,6 +87,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                         new Liquido()).commit();
                 break;
             case R.id.nav_logout:
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
+                        new Dialogo_salida()).commit();
+                break;
+            case R.id.nav_cuidadores:
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
                         new Dialogo_salida()).commit();
                 break;

@@ -12,28 +12,24 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
-public class Enfermedades extends Fragment {
-    EditText nom_enf, fecha, sintom, precauciones, medicamentos;
-    Button btn_enf_registro;
+public class Cuidador extends Fragment {
+    EditText nom_cuid, apaterno, amaterno, edad, telefono, parentesco;
+    Button btn_cuid_registro;
     String text;
     int number;
-
-
-
-
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View v = inflater.inflate(R.layout.fragment_enfermedades, container, false);
-        btn_enf_registro=v.findViewById(R.id.btn_registrar_enf);
+        View v = inflater.inflate(R.layout.fragment_cuidadores, container, false);
+        btn_cuid_registro=v.findViewById(R.id.btn_registrar_enf);
 
-        btn_enf_registro.setOnClickListener(new View.OnClickListener() {
+        btn_cuid_registro.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 //Toast.makeText(getActivity(),"", Toast.LENGTH_SHORT).show();
                 //startActivity(new Intent(getApplicationContext(), Register.class));
-                Intent intent = new Intent(getActivity(), RegistroEnfermedades.class);
+                Intent intent = new Intent(getActivity(), RegistroCuidador.class);
                 intent.putExtra("some", "Some thing");
                 startActivity(intent);
             }
@@ -42,5 +38,5 @@ public class Enfermedades extends Fragment {
 
         return v;
     }
-    
+
 }

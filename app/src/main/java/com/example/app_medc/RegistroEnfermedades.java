@@ -56,6 +56,7 @@ public class RegistroEnfermedades extends AppCompatActivity {
 
                 //Que??
                 String finalEnfermedadID = enfermedadID;
+                //añadir nuevas enfermedades
                 databaseReference.addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {

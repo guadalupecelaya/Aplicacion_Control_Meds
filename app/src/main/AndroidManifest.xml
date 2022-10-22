@@ -47,8 +47,17 @@
             android:name=".RegistroEnfermedades"
             android:theme="@style/AppTheme.NoActionBar"
             android:exported="false"/>
+
         <activity
             android:name=".Salir"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:exported="false" />
+        <activity
+            android:name=".ProfileAct"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:exported="false" />
+        <activity
+            android:name=".MedicamentoEditar"
             android:theme="@style/AppTheme.NoActionBar"
             android:exported="false" />
 
