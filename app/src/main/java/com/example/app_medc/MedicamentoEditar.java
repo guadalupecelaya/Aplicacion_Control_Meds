@@ -60,8 +60,8 @@ public class MedicamentoEditar extends AppCompatActivity {
         mg=findViewById(R.id.PT_ap_mg);
         farmaceutica=findViewById(R.id.PT_fabricante);
         padecimiento=findViewById(R.id.PT_uso);
-        btn_editar=findViewById(R.id.btn_editar_med);
-        btn_eliminar=findViewById(R.id.btn_eliminar_med);
+        btn_editar=findViewById(R.id.btn_editar_cuid);
+        btn_eliminar=findViewById(R.id.btn_eliminar_cuid);
         medicamentosRVModal=getIntent().getParcelableExtra("medicamento");
 
         if(medicamentosRVModal!=null){
@@ -137,6 +137,6 @@ public class MedicamentoEditar extends AppCompatActivity {
     private void eliminarMedicamento(){
         databaseReference.removeValue();
         Toast.makeText(MedicamentoEditar.this, "Medicamento eliminado", Toast.LENGTH_SHORT).show();
-        startActivity(new Intent(MedicamentoEditar.this, RegistroMedicamento.class));
+        startActivity(new Intent(MedicamentoEditar.this, MainActivity.class));
     }
 }

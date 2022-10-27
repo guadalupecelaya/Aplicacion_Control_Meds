@@ -26,7 +26,7 @@ public class Dialogo_salida extends DialogFragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         super.onCreateView(inflater, container, savedInstanceState);
-        View v = inflater.inflate(R.layout.buttom_dialog_med, container, false);
+        View v = inflater.inflate(R.layout.fragment_dialogo_salida, container, false);
         logout = v.findViewById(R.id.btn_cerrar);
         cancelar=v.findViewById(R.id.btn_cancelar);
         fAuth=FirebaseAuth.getInstance();

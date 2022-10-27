@@ -25,6 +25,7 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -42,6 +43,7 @@ public class Medicamentos extends Fragment {
     Button btn_med_registro;
     private FirebaseAuth firebaseDatabase;
     private DatabaseReference databaseReference;
+    private DatabaseReference dataReference;
     private ArrayList<MedicamentosRVModal> medicamentosList;
     private MedicamentosAdapter medicamentosAdapter;
     private RecyclerView medicamentoRV;
@@ -61,19 +63,36 @@ public class Medicamentos extends Fragment {
         btn_med_registro=v.findViewById(R.id.btn_registrar_med);
         recyclerView=v.findViewById(R.id.recycler_view);
 
-        databaseReference= FirebaseDatabase.getInstance().getReference("Medicamentos");
+        //INSTANCIA DE USUARIO ACTUAL
+        FirebaseUser user=FirebaseAuth.getInstance().getCurrentUser();
+        String useruid=user.getUid();
+
+        System.out.println("USERID: "+useruid);
+
+        //databaseReference= FirebaseDatabase.getInstance().getReference("Medicamentos");
+
+        dataReference= FirebaseDatabase.getInstance().getReference("Medicamentos");
+        dataReference.orderByChild("userUD").equals(useruid);
+        //databaseReference=FirebaseDatabase.getInstance().getReference("Medicamentos").child().child(useruid);
+
+
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this.getContext()));
 
         medicamentosList = new ArrayList<>();
         medicamentosAdapter = new MedicamentosAdapter(medicamentosList,this.getContext());
         recyclerView.setAdapter(medicamentosAdapter);
-        databaseReference.addValueEventListener(new ValueEventListener() {
+        dataReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 for(DataSnapshot dataSnapshot : snapshot.getChildren()){
                     MedicamentosRVModal medModal = dataSnapshot.getValue((MedicamentosRVModal.class));
-                    medicamentosList.add(medModal);
+                    System.out.println("-----------MED MODAL: "+ medModal.getUserUD());
+                    System.out.println("-----------USERUID: "+ useruid);
+                   // if(useruid == medModal.getUserUD() && useruid!=null){
+                        medicamentosList.add(medModal);
+                    //}
+
 
                 }
                 medicamentosAdapter.notifyDataSetChanged();
@@ -90,8 +109,6 @@ public class Medicamentos extends Fragment {
         btn_med_registro.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //Toast.makeText(getActivity(),"", Toast.LENGTH_SHORT).show();
-                //startActivity(new Intent(getApplicationContext(), Register.class));
                 Intent intent = new Intent(getActivity(), RegistroMedicamento.class);
                 intent.putExtra("some", "Some thing");
                 startActivity(intent);

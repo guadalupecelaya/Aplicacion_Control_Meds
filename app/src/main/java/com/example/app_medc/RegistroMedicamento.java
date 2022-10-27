@@ -12,6 +12,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -25,6 +27,7 @@ public class RegistroMedicamento extends AppCompatActivity {
     FirebaseDatabase firebaseDatabase;
     DatabaseReference databaseReference;
     private String medicamentoID;
+    private String userID;
     int number;
     RecyclerView recyclerView;
 
@@ -40,10 +43,13 @@ public class RegistroMedicamento extends AppCompatActivity {
         btn_med_registro=findViewById(R.id.btn_registrar_med);
         firebaseDatabase = FirebaseDatabase.getInstance();
         databaseReference=firebaseDatabase.getReference("Medicamentos");
+        //recyclerView = findViewById(R.id.recycler_view);
 
+        //ID del usuario
+        FirebaseUser user= FirebaseAuth.getInstance().getCurrentUser();
+        userID = user.getUid();
 
-        recyclerView = findViewById(R.id.recycler_view);
-
+        System.out.println("USERID REGISTRO: "+userID);
 
 
         btn_med_registro.setOnClickListener(new View.OnClickListener() {
@@ -56,7 +62,8 @@ public class RegistroMedicamento extends AppCompatActivity {
                 String descripcionUso = padecimiento.getText().toString();
                 String medicamentoID = nom_med.getText().toString();
                 medicamentoID=nombreMedicamento;
-                MedicamentosRVModal medicamentosRVModal = new MedicamentosRVModal(nombreMedicamento,viaAdministracion,cantidad,farmaceuticaFabricante,descripcionUso,medicamentoID);
+                MedicamentosRVModal medicamentosRVModal = new MedicamentosRVModal(nombreMedicamento,viaAdministracion,
+                        cantidad,farmaceuticaFabricante,descripcionUso,medicamentoID, userID);
 
                 //Que??
                 String finalMedicamentoID = medicamentoID;
@@ -87,13 +94,13 @@ public class RegistroMedicamento extends AppCompatActivity {
         }
         System.out.println(" ANTES DEL CLICK");
 // LISTA DE MEDICAMENTOS
-        recyclerView.setOnClickListener(new View.OnClickListener() {
+      /* recyclerView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 System.out.println(" ENTRA AL CLICK");
                 startActivity(new Intent(RegistroMedicamento.this, MainActivity.class));
             }
-        });
+        });*/
 
 
     }

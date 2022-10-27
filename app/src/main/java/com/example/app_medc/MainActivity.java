@@ -4,21 +4,16 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.annotation.SuppressLint;
-import android.view.Gravity;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Toast;
 
 import com.google.android.material.navigation.NavigationView;
-import com.google.firebase.FirebaseApp;
 import com.google.firebase.auth.FirebaseAuth;
 
 import androidx.appcompat.widget.Toolbar;
-import androidx.coordinatorlayout.widget.CoordinatorLayout;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
@@ -65,7 +60,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 break;
             case R.id.nav_enfermedades:
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                        new Enfermedades()).commit();
+                        new EnfermedadesFragment()).commit();
                 break;
             case R.id.nav_estado:
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
@@ -92,7 +87,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 break;
             case R.id.nav_cuidadores:
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                        new Dialogo_salida()).commit();
+                        new Cuidador()).commit();
                 break;
 
         }

@@ -10,6 +10,15 @@ public class MedicamentosRVModal implements Parcelable {
     private String farmaceuticaFabricante;
     private String descripcionUso;
     private String medicamentoID;
+    private String userUD;
+
+    public String getUserUD() {
+        return userUD;
+    }
+
+    public void setUserUD(String userUD) {
+        this.userUD = userUD;
+    }
 
     public MedicamentosRVModal() {
     }
@@ -21,6 +30,7 @@ public class MedicamentosRVModal implements Parcelable {
         farmaceuticaFabricante = in.readString();
         descripcionUso = in.readString();
         medicamentoID = in.readString();
+        userUD = in.readString();
     }
 
     public static final Creator<MedicamentosRVModal> CREATOR = new Creator<MedicamentosRVModal>() {
@@ -83,13 +93,17 @@ public class MedicamentosRVModal implements Parcelable {
         this.medicamentoID = medicamentoID;
     }
 
-    public MedicamentosRVModal(String nombreMedicamento, String viaAdministracion, String cantida, String farmaceuticaFabricante, String descripcionUso, String medicamentoID) {
+    public MedicamentosRVModal(String nombreMedicamento, String viaAdministracion, String cantida,
+                               String farmaceuticaFabricante, String descripcionUso, String medicamentoID,
+                               String userUD) {
         this.nombreMedicamento = nombreMedicamento;
         this.viaAdministracion = viaAdministracion;
         this.cantida = cantida;
         this.farmaceuticaFabricante = farmaceuticaFabricante;
         this.descripcionUso = descripcionUso;
         this.medicamentoID =medicamentoID;
+        this.userUD=userUD;
+
     }
 
     @Override
@@ -97,6 +111,8 @@ public class MedicamentosRVModal implements Parcelable {
         return 0;
     }
 
+
+    //userID ??
     @Override
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeString(nombreMedicamento);

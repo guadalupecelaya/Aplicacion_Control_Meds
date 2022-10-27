@@ -14,8 +14,6 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.squareup.picasso.Picasso;
-
 import java.util.ArrayList;
 
 public class MedicamentosAdapter extends RecyclerView.Adapter<MedicamentosAdapter.ViewHolder> {
@@ -56,7 +54,7 @@ public class MedicamentosAdapter extends RecyclerView.Adapter<MedicamentosAdapte
     @NonNull
     @Override
     public MedicamentosAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View views = LayoutInflater.from(context).inflate(R.layout.list_item,parent,false);
+        View views = LayoutInflater.from(context).inflate(R.layout.list_item_med,parent,false);
         return new ViewHolder(views);
     }
 
@@ -67,21 +65,28 @@ public class MedicamentosAdapter extends RecyclerView.Adapter<MedicamentosAdapte
         holder.farmaceutica.setText(medicamentoRVModal.getFarmaceuticaFabricante());
         holder.mg_meds.setText(medicamentoRVModal.getCantida());
         //Picasso.get().load(medicamentoRVModal.get)
+
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 int pos = (int) holder.getAdapterPosition();
-                final Intent intent;
+                final Intent intent, inte;
                 //intent =  new Intent(context, MedicamentoEditar.class);
                 intent = new Intent(context, MedicamentoEditar.class);
+                inte = new Intent(context, MedicamentoEliminar.class);
+
                 intent.putExtra("nombre", medicamentosRVModalArrayList.get(position).getNombreMedicamento());
                 intent.putExtra("viaAdministracion", medicamentosRVModalArrayList.get(position).getViaAdministracion());
                 intent.putExtra("cantida", medicamentosRVModalArrayList.get(position).getCantida());
                 intent.putExtra("farmaceuticaFabricante", medicamentosRVModalArrayList.get(position).getFarmaceuticaFabricante());
                 intent.putExtra("descripcionUso", medicamentosRVModalArrayList.get(position).getDescripcionUso());
-                System.out.println("pos:" + (pos));
 
-                System.out.println(" ENTRA AL CLICK");
+                inte.putExtra("nombre", medicamentosRVModalArrayList.get(position).getNombreMedicamento());
+                inte.putExtra("viaAdministracion", medicamentosRVModalArrayList.get(position).getViaAdministracion());
+                inte.putExtra("cantida", medicamentosRVModalArrayList.get(position).getCantida());
+                inte.putExtra("farmaceuticaFabricante", medicamentosRVModalArrayList.get(position).getFarmaceuticaFabricante());
+                inte.putExtra("descripcionUso", medicamentosRVModalArrayList.get(position).getDescripcionUso());
+
 
                 //alerta para editar o eliminar
                 AlertDialog.Builder alertDialog = new AlertDialog.Builder(v.getContext());
@@ -98,9 +103,9 @@ public class MedicamentosAdapter extends RecyclerView.Adapter<MedicamentosAdapte
                 // Setting Positive "Yes" Button
                 alertDialog.setPositiveButton("Eliminar", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int which) {
-                        final Intent intent;
-                        intent =  new Intent(context, MedicamentoEditar.class);
-                        context.startActivity(intent);
+
+                        context.startActivity(inte);
+                        dialog.cancel();
                     }
                 });
 
@@ -110,7 +115,6 @@ public class MedicamentosAdapter extends RecyclerView.Adapter<MedicamentosAdapte
                         // Write your code here to invoke NO event
                         context.startActivity(intent);
 
-                        //dialog.cancel();
                     }
                 });
                 alertDialog.setNeutralButton("Cancelar", new DialogInterface.OnClickListener() {
@@ -120,16 +124,9 @@ public class MedicamentosAdapter extends RecyclerView.Adapter<MedicamentosAdapte
                     }
                 });
 
-
-
-
-                // Showing Alert Message
+                // mostrara dialogo
                 alertDialog.show();
 
-
-                //startActivity(new Intent(RegistroMedicamento.this, MainActivity.class));
-
-                //OnItemClick.onItemClick(pos);
 
             }
         });

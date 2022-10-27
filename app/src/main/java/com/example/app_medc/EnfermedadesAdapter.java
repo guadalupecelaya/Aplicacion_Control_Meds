@@ -20,24 +20,25 @@ public class EnfermedadesAdapter extends RecyclerView.Adapter<EnfermedadesAdapte
 
 
 
-    public EnfermedadesAdapter(ArrayList<EnfermedadesRVModal> enfermedadesRVModalArrayList, EnfermedadesAdapter.enfermedadesClickInterface enfermedadesClickInterface, Context context) {
+    public EnfermedadesAdapter(ArrayList<EnfermedadesRVModal> enfermedadesRVModalArrayList, Context context) {
         this.enfermedadesRVModalArrayList = enfermedadesRVModalArrayList;
         this.context=context;
-        this.EnfermedadesClickInterface = enfermedadesClickInterface;
+        //this.EnfermedadesClickInterface = enfermedadesClickInterface;
     }
 
     @NonNull
     @Override
     public EnfermedadesAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View views = LayoutInflater.from(context).inflate(R.layout.medicamento_rv_item,parent,false);
+        View views = LayoutInflater.from(context).inflate(R.layout.list_item_enf,parent,false);
         return new EnfermedadesAdapter.ViewHolder(views);
     }
 
     @Override
     public void onBindViewHolder(@NonNull EnfermedadesAdapter.ViewHolder holder, int position) {
         EnfermedadesRVModal enfermedadesRVModal = enfermedadesRVModalArrayList.get(position);
-        holder.nombreMedicamentoTV.setText(enfermedadesRVModal.getNombreEnfermedado());
-        holder.viaAdministracionTV.setText("Rs. "+enfermedadesRVModal.getFechaDiagnostico());
+        holder.nombreEnfermedadTV.setText(enfermedadesRVModal.getNombreEnfermedado());
+        holder.FechaTV.setText("Rs. "+enfermedadesRVModal.getFechaDiagnostico());
+        holder.padecimientoTV.setText((enfermedadesRVModal.getSintomas()));
 
         //Picasso.get().load(medicamentoRVModal.get)
 
@@ -48,13 +49,13 @@ public class EnfermedadesAdapter extends RecyclerView.Adapter<EnfermedadesAdapte
         return enfermedadesRVModalArrayList.size();
     }
     public class ViewHolder extends RecyclerView.ViewHolder{
-        private TextView nombreMedicamentoTV, viaAdministracionTV;
+        private TextView nombreEnfermedadTV, FechaTV, padecimientoTV;
         private ImageView enfermedadesIV;
         public ViewHolder(@NonNull View itemView){
             super(itemView);
-            nombreMedicamentoTV = itemView.findViewById(R.id.IdIVMedicamento_nombre);
-            viaAdministracionTV = itemView.findViewById(R.id.IdIViaMed);
-            enfermedadesIV=itemView.findViewById(R.id.IdIVMedicamento);
+            nombreEnfermedadTV = itemView.findViewById(R.id.nombre_enf_list);
+            FechaTV = itemView.findViewById(R.id.fecha_list);
+            padecimientoTV =itemView.findViewById(R.id.sintomas_list);
 
         }
     }
