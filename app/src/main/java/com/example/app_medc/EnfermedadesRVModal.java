@@ -11,8 +11,17 @@ public class EnfermedadesRVModal implements Parcelable {
     private String precauciones;
     private String medicamentosComunes;
     private String enfermedadesID;
+    private String userUD;
 
     public EnfermedadesRVModal() {
+    }
+
+    public String getUserUD() {
+        return userUD;
+    }
+
+    public void setUserUD(String userUD) {
+        this.userUD = userUD;
     }
 
     protected EnfermedadesRVModal(Parcel in) {
@@ -22,6 +31,7 @@ public class EnfermedadesRVModal implements Parcelable {
         precauciones = in.readString();
         medicamentosComunes = in.readString();
         enfermedadesID = in.readString();
+        userUD = in.readString();
     }
 
     public static final Creator<EnfermedadesRVModal> CREATOR = new Creator<EnfermedadesRVModal>() {
@@ -85,13 +95,14 @@ public class EnfermedadesRVModal implements Parcelable {
     }
 
     public EnfermedadesRVModal(String nombreEnfermedado, String fechaDiagnostico, String sintomas, String precauciones,
-                               String medicamentosComunes, String enfermedadesID) {
+                               String medicamentosComunes, String enfermedadesID, String userUD) {
         this.nombreEnfermedado = nombreEnfermedado;
         this.fechaDiagnostico = fechaDiagnostico;
         this.sintomas = fechaDiagnostico;
         this.precauciones = sintomas;
         this.medicamentosComunes = medicamentosComunes;
         this.enfermedadesID = enfermedadesID;
+        this.userUD = userUD;
     }
 
     @Override

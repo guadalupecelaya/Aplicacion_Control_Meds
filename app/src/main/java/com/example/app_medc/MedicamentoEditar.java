@@ -24,7 +24,7 @@ import java.util.Map;
 
 public class MedicamentoEditar extends AppCompatActivity {
     EditText nom_med, ingesta, mg, farmaceutica, padecimiento, medID;
-    Button btn_editar, btn_eliminar;
+    Button btn_editar, btn_cancelar;
     ImageButton btnEditarMed;
     FirebaseDatabase firebaseDatabase;
     DatabaseReference databaseReference;
@@ -37,13 +37,6 @@ public class MedicamentoEditar extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_editar_med);
-
-        /*Intent intent = new Intent(getActivity(), MedicamentoEditar.class);
-        intent.putExtra("nombre", medicamentosList.get(position).getNombreMedicamento());
-        intent.putExtra("viaAdministracion", medicamentosList.get(position).getViaAdministracion());
-        intent.putExtra("cantida", medicamentosList.get(position).getCantida());
-        intent.putExtra("farmaceuticaFabricante", medicamentosList.get(position).getFarmaceuticaFabricante());
-        intent.putExtra("descripcionUso", medicamentosList.get(position).getDescripcionUso());*/
 
         //Intent intent = new Intent(MainActivity.this,MedicamentoEditar.class);
         String nombre = getIntent().getStringExtra("nombre");
@@ -61,23 +54,24 @@ public class MedicamentoEditar extends AppCompatActivity {
         farmaceutica=findViewById(R.id.PT_fabricante);
         padecimiento=findViewById(R.id.PT_uso);
         btn_editar=findViewById(R.id.btn_editar_cuid);
-        btn_eliminar=findViewById(R.id.btn_eliminar_cuid);
+        btn_cancelar=findViewById(R.id.btn_cancelar_cuid);
         medicamentosRVModal=getIntent().getParcelableExtra("medicamento");
 
         if(medicamentosRVModal!=null){
-            /*nom_med.setText(medicamentosRVModal.getNombreMedicamento());
-            ingesta.setText(medicamentosRVModal.getViaAdministracion());
-            mg.setText(medicamentosRVModal.getCantida());
-            farmaceutica.setText(medicamentosRVModal.getFarmaceuticaFabricante());
-            padecimiento.setText(medicamentosRVModal.getDescripcionUso());
-            medicamentoID=medicamentosRVModal.getMedicamentoID();*/
-
             nom_med.setText(nombre);
             ingesta.setText(viaAdministracion);
             mg.setText(cantida);
             farmaceutica.setText(farmaceuticaFabricante);
             padecimiento.setText(descripcionUso);
         }
+
+        // Editar Temporal
+        nom_med.setText(nombre);
+        ingesta.setText(viaAdministracion);
+        mg.setText(cantida);
+        farmaceutica.setText(farmaceuticaFabricante);
+        padecimiento.setText(descripcionUso);
+
         System.out.println("LINEA PARA VER trae el ID: "+medicamentoID);
         databaseReference = firebaseDatabase.getReference("Medicamentos").child(medicamentoID);
         btn_editar.setOnClickListener(new View.OnClickListener() {
@@ -113,7 +107,7 @@ public class MedicamentoEditar extends AppCompatActivity {
                     }
                 });
 
-                btn_eliminar.setOnClickListener(new View.OnClickListener() {
+                btn_cancelar.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
                         eliminarMedicamento();
@@ -125,7 +119,7 @@ public class MedicamentoEditar extends AppCompatActivity {
 
         });
 
-        btn_eliminar.setOnClickListener(new View.OnClickListener() {
+        btn_cancelar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 eliminarMedicamento();
@@ -137,6 +131,6 @@ public class MedicamentoEditar extends AppCompatActivity {
     private void eliminarMedicamento(){
         databaseReference.removeValue();
         Toast.makeText(MedicamentoEditar.this, "Medicamento eliminado", Toast.LENGTH_SHORT).show();
-        startActivity(new Intent(MedicamentoEditar.this, MainActivity.class));
+        startActivity(new Intent(MedicamentoEditar.this, Medicamentos.class));
     }
 }

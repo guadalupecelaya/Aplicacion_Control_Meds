@@ -20,173 +20,118 @@
         app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
         tools:layout_editor_absoluteX="-16dp" />
 
+
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Editar medicamento"
+        android:text="Editar enfermedad"
         android:textAppearance="@style/TextAppearance.AppCompat.Body2"
         android:textColor="@color/teal_700"
         android:textSize="26sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.292"
+        app:layout_constraintHorizontal_bias="0.171"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.11" />
-
+        app:layout_constraintVertical_bias="0.153" />
 
     <EditText
-        android:id="@+id/PT_nom_cuidador"
+        android:id="@+id/PT_nom_enfermedad_ed"
         android:layout_width="343dp"
         android:layout_height="52dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="20dp"
         android:background="@drawable/style_bordes_editext"
         android:ems="10"
-        android:hint="Nombre"
+        android:hint="Nombre del padecimiento"
         android:inputType="textPersonName"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/PT_fecha_diagnostico_ed"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.527"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.231" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
-        android:id="@+id/PT_apa_cuid"
+        android:id="@+id/PT_fecha_diagnostico_ed"
         android:layout_width="343dp"
         android:layout_height="52dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="20dp"
         android:background="@drawable/style_bordes_editext"
         android:ems="10"
-        android:hint="Apellido paterno"
-        android:inputType="textPersonName"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:hint="Fecha de diagnostico"
+        android:inputType="date"
+        app:layout_constraintBottom_toTopOf="@+id/PT_sintomas_ed"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.527"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.231" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
-        android:id="@+id/PT_ama_cuid"
+        android:id="@+id/PT_sintomas_ed"
         android:layout_width="343dp"
         android:layout_height="52dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="20dp"
         android:background="@drawable/style_bordes_editext"
         android:ems="10"
-        android:hint="Apellido materno"
-        android:inputType="textPersonName"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.527"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.231" />
-
-    <EditText
-        android:id="@+id/PT_telefono_cuidador"
-        android:layout_width="343dp"
-        android:layout_height="52dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:background="@drawable/style_bordes_editext"
-        android:ems="10"
-        android:hint="Telefono"
+        android:hint="Sintomas"
         android:inputType="text|number"
         android:minHeight="38dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/PT_precausiones_ed"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.527"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.329" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
-        android:id="@+id/PT_fabricante"
+        android:id="@+id/PT_precausiones_ed"
         android:layout_width="343dp"
         android:layout_height="52dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="20dp"
         android:background="@drawable/style_bordes_editext"
         android:ems="10"
-        android:hint="Farmaceutica"
+        android:hint="Cuidados especiales"
         android:inputType="textPersonName"
         android:minHeight="48dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/PT_medicamentos_comunes_ed"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.527"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.435" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
-        android:id="@+id/PT_via"
+        android:id="@+id/PT_medicamentos_comunes_ed"
         android:layout_width="344dp"
         android:layout_height="52dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="210dp"
         android:background="@drawable/style_bordes_editext"
         android:ems="10"
-        android:hint="Via de administracion"
+        android:hint="Medicamentos comunes"
         android:inputType="textPersonName"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.514"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.54" />
-
-    <EditText
-        android:id="@+id/PT_uso"
-        android:layout_width="343dp"
-        android:layout_height="52dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:background="@drawable/style_bordes_editext"
-        android:ems="10"
-        android:hint="Padecimiento"
-        android:inputType="textPersonName"
-        android:minHeight="48dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.527"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.655" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/btn_editar_cuid"
+        android:id="@+id/btn_editar_enf"
         android:layout_width="123dp"
         android:layout_height="53dp"
-        android:layout_marginBottom="116dp"
+        android:layout_marginBottom="90dp"
         android:background="@color/darkGreen"
         android:text="Editar"
         android:textColor="@color/white"
         app:cornerRadius="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.809"
+        app:layout_constraintHorizontal_bias="0.763"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/PT_uso" />
+        app:layout_constraintTop_toBottomOf="@+id/PT_medicamentos_comunes_ed"
+        app:layout_constraintVertical_bias="0.507" />
 
     <Button
-        android:id="@+id/btn_eliminar_cuid"
+        android:id="@+id/btn_cancelar_enf"
         android:layout_width="123dp"
         android:layout_height="53dp"
-        android:layout_marginBottom="116dp"
+        android:layout_marginBottom="90dp"
         android:background="@color/darkGreen"
         android:text="Cancelar"
-        android:textColor="@color/white"
 
+        android:textColor="@color/white"
         app:cornerRadius="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.173"
+        app:layout_constraintEnd_toStartOf="@+id/btn_editar_enf"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/PT_uso" />
+        app:layout_constraintTop_toBottomOf="@+id/PT_medicamentos_comunes_ed" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -77,6 +77,22 @@
             android:name=".CuidadorEliminar"
             android:theme="@style/AppTheme.NoActionBar"
             android:exported="false" />
+        <activity
+            android:name=".Medicamentos"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:exported="false" />
+        <activity
+            android:name=".EnfermedadesEditar"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:exported="false" />
+        <activity
+            android:name=".EnfermedadesEliminar"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:exported="false" />
+        <activity
+            android:name=".EnfermedadesFragment"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:exported="false" />
 
 
     </application>

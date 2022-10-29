@@ -12,6 +12,7 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -48,6 +49,10 @@ public class EnfermedadesFragment extends Fragment {
         btn_enf_registro=v.findViewById(R.id.btn_registrar_enf);
         recyclerView=v.findViewById(R.id.recycler_view);
 
+        //INSTANCIA DE USUARIO ACTUAL
+        FirebaseUser user=FirebaseAuth.getInstance().getCurrentUser();
+        String useruid=user.getUid();
+
         databaseReference= FirebaseDatabase.getInstance().getReference("Enfermedades");
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this.getContext()));
@@ -60,7 +65,9 @@ public class EnfermedadesFragment extends Fragment {
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 for(DataSnapshot dataSnapshot : snapshot.getChildren()){
                    EnfermedadesRVModal enfModal = dataSnapshot.getValue((EnfermedadesRVModal.class));
-                    enfermedadesList.add(enfModal);
+                    if(useruid.equalsIgnoreCase(String.valueOf(enfModal.getUserUD()))) {
+                        enfermedadesList.add(enfModal);
+                    }
 
                 }
                 enfermedadesAdapter.notifyDataSetChanged();

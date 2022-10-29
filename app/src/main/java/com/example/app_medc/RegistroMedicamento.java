@@ -49,7 +49,6 @@ public class RegistroMedicamento extends AppCompatActivity {
         FirebaseUser user= FirebaseAuth.getInstance().getCurrentUser();
         userID = user.getUid();
 
-        System.out.println("USERID REGISTRO: "+userID);
 
 
         btn_med_registro.setOnClickListener(new View.OnClickListener() {

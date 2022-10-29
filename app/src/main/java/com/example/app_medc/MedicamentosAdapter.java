@@ -20,26 +20,15 @@ public class MedicamentosAdapter extends RecyclerView.Adapter<MedicamentosAdapte
     private ArrayList<MedicamentosRVModal> medicamentosRVModalArrayList;
     private Context context;
     int lastPos = -1;
-    //private medicamentosClickInterface MedicamentosClickInterface;
-
-
-
 
     public static  class MyViewHolder extends RecyclerView.ViewHolder{
-
         TextView nom_meds, farmaceutica, mg;
-
-
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
             nom_meds = itemView.findViewById(R.id.nombre_med_list);
             farmaceutica=itemView.findViewById(R.id.farmaceutica_list);
             mg=itemView.findViewById(R.id.mg_list);
         }
-
-
-
-
 
     }
 

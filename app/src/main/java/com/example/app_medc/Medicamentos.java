@@ -69,29 +69,29 @@ public class Medicamentos extends Fragment {
 
         System.out.println("USERID: "+useruid);
 
-        //databaseReference= FirebaseDatabase.getInstance().getReference("Medicamentos");
+        databaseReference= FirebaseDatabase.getInstance().getReference("Medicamentos");
 
-        dataReference= FirebaseDatabase.getInstance().getReference("Medicamentos");
-        dataReference.orderByChild("userUD").equals(useruid);
+        //dataReference= FirebaseDatabase.getInstance().getReference("Medicamentos");
+        //dataReference.orderByChild("userUD").equals(useruid);
         //databaseReference=FirebaseDatabase.getInstance().getReference("Medicamentos").child().child(useruid);
 
-
+        //System.out.println("MED MODAL:");
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this.getContext()));
 
         medicamentosList = new ArrayList<>();
         medicamentosAdapter = new MedicamentosAdapter(medicamentosList,this.getContext());
         recyclerView.setAdapter(medicamentosAdapter);
-        dataReference.addValueEventListener(new ValueEventListener() {
+        databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 for(DataSnapshot dataSnapshot : snapshot.getChildren()){
                     MedicamentosRVModal medModal = dataSnapshot.getValue((MedicamentosRVModal.class));
-                    System.out.println("-----------MED MODAL: "+ medModal.getUserUD());
-                    System.out.println("-----------USERUID: "+ useruid);
-                   // if(useruid == medModal.getUserUD() && useruid!=null){
+                    System.out.println("MED MODAL: "+ medModal.getUserUD()+"  -----------USERUID: "+ useruid);
+                   if(useruid.equalsIgnoreCase(String.valueOf(medModal.getUserUD()))){
+                       System.out.println("ESTA DENTRO DEL IF");
                         medicamentosList.add(medModal);
-                    //}
+                   }
 
 
                 }

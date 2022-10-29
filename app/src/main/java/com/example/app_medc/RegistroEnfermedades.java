@@ -12,6 +12,8 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.drawerlayout.widget.DrawerLayout;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -25,6 +27,7 @@ public class RegistroEnfermedades extends AppCompatActivity {
     FirebaseDatabase firebaseDatabase;
     DatabaseReference databaseReference;
     private String enfermedadID;
+    private String userID;
     int number;
 
     @Override
@@ -51,8 +54,12 @@ public class RegistroEnfermedades extends AppCompatActivity {
                 String enfermedadID = nom_enf.getText().toString();
                 enfermedadID=nombreEnfermedad;
 
+                //ID del usuario
+                FirebaseUser user= FirebaseAuth.getInstance().getCurrentUser();
+                userID = user.getUid();
+
                 EnfermedadesRVModal  enfermedadesRVModal = new EnfermedadesRVModal(nombreEnfermedad ,fecha_diagnostico,
-                        sintomas,cuidados,medicamentosComunes,enfermedadID);
+                        sintomas,cuidados,medicamentosComunes,enfermedadID, userID);
 
                 //Que??
                 String finalEnfermedadID = enfermedadID;
