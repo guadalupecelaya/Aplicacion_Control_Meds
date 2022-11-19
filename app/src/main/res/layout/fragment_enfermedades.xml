@@ -12,7 +12,7 @@
         tools:listitem="@layout/list_item_enf" />
 
     <Button
-        android:id="@+id/btn_registrar_enf"
+        android:id="@+id/btn_registrar_alert"
         android:layout_width="62dp"
         android:layout_height="61dp"
         android:layout_alignParentEnd="true"

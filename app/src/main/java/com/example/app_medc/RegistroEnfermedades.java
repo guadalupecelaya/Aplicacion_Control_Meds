@@ -39,7 +39,7 @@ public class RegistroEnfermedades extends AppCompatActivity {
         sintom=findViewById(R.id.PT_Sintomas);
         precauciones=findViewById(R.id.PT_precauciones);
         medicamentos=findViewById(R.id.PT_medicamentos_comunes);
-        btn_enf_registro=findViewById(R.id.btn_registrar_enf);
+        btn_enf_registro=findViewById(R.id.btn_registrar_alert);
         firebaseDatabase = FirebaseDatabase.getInstance();
         databaseReference=firebaseDatabase.getReference("Enfermedades");
 

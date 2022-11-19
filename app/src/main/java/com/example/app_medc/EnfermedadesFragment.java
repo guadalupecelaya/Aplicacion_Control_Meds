@@ -46,7 +46,7 @@ public class EnfermedadesFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_enfermedades, container, false);
-        btn_enf_registro=v.findViewById(R.id.btn_registrar_enf);
+        btn_enf_registro=v.findViewById(R.id.btn_registrar_alert);
         recyclerView=v.findViewById(R.id.recycler_view);
 
         //INSTANCIA DE USUARIO ACTUAL

@@ -23,7 +23,7 @@
         android:id="@+id/textView"
         android:layout_width="321dp"
         android:layout_height="54dp"
-        android:text="Nueva enfermedad"
+        android:text="Control de liquidos"
         android:textAppearance="@style/TextAppearance.AppCompat.Body2"
         android:textColor="@color/darkGreen"
         android:textSize="26sp"
@@ -35,14 +35,14 @@
         app:layout_constraintVertical_bias="0.122" />
 
     <EditText
-        android:id="@+id/PT_nom_enfermedad"
+        android:id="@+id/PT_fecha_liq"
         android:layout_width="343dp"
         android:layout_height="52dp"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
         android:background="@drawable/style_bordes_editext"
         android:ems="10"
-        android:hint="Nombre de la enfermedad"
+        android:hint="fecha"
         android:inputType="textPersonName"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -52,14 +52,14 @@
         app:layout_constraintVertical_bias="0.231" />
 
     <EditText
-        android:id="@+id/PT_fecha_diagnostico"
+        android:id="@+id/PT_hora_liq"
         android:layout_width="343dp"
         android:layout_height="52dp"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
         android:background="@drawable/style_bordes_editext"
         android:ems="10"
-        android:hint="Fecha de diagnostico"
+        android:hint="hora"
         android:inputType="text|number"
         android:minHeight="38dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -69,14 +69,14 @@
         app:layout_constraintVertical_bias="0.34" />
 
     <EditText
-        android:id="@+id/PT_Sintomas"
+        android:id="@+id/PT_evacuacion"
         android:layout_width="343dp"
         android:layout_height="52dp"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
         android:background="@drawable/style_bordes_editext"
         android:ems="10"
-        android:hint="Sintomas"
+        android:hint="tipo de evacuacion"
         android:inputType="textPersonName"
         android:minHeight="48dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -87,14 +87,14 @@
         app:layout_constraintVertical_bias="0.435" />
 
     <EditText
-        android:id="@+id/PT_precauciones"
+        android:id="@+id/PT_cantidad_liq"
         android:layout_width="344dp"
         android:layout_height="52dp"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
         android:background="@drawable/style_bordes_editext"
         android:ems="10"
-        android:hint="Precauciones"
+        android:hint="Cantidad"
         android:inputType="textPersonName"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -104,14 +104,14 @@
         app:layout_constraintVertical_bias="0.534" />
 
     <EditText
-        android:id="@+id/PT_medicamentos_comunes"
+        android:id="@+id/PT_descripcion_liq"
         android:layout_width="343dp"
         android:layout_height="52dp"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
         android:background="@drawable/style_bordes_editext"
         android:ems="10"
-        android:hint="Medicamentos comunes"
+        android:hint="Descripcion"
         android:inputType="textPersonName"
         android:minHeight="48dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -121,7 +121,7 @@
         app:layout_constraintVertical_bias="0.642" />
 
     <Button
-        android:id="@+id/btn_registrar_alert"
+        android:id="@+id/btn_registrar_liq"
         android:layout_width="123dp"
         android:layout_height="53dp"
         android:layout_marginBottom="116dp"
@@ -133,11 +133,11 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.767"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/PT_medicamentos_comunes"
+        app:layout_constraintTop_toBottomOf="@+id/PT_descripcion_liq"
         app:layout_constraintVertical_bias="1.0" />
 
     <Button
-        android:id="@+id/btn_registrar_enf_cancelar"
+        android:id="@+id/btn_registrar_liq_cancelar"
         android:layout_width="123dp"
         android:layout_height="53dp"
         android:layout_marginBottom="116dp"

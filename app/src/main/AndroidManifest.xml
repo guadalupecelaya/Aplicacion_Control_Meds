@@ -93,6 +93,14 @@
             android:name=".EnfermedadesFragment"
             android:theme="@style/AppTheme.NoActionBar"
             android:exported="false" />
+        <activity
+            android:name=".RegistroLiquido"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:exported="false" />
+        <activity
+            android:name=".LiquidoEditar"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:exported="false" />
 
 
     </application>

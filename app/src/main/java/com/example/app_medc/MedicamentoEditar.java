@@ -38,7 +38,6 @@ public class MedicamentoEditar extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_editar_med);
 
-        //Intent intent = new Intent(MainActivity.this,MedicamentoEditar.class);
         String nombre = getIntent().getStringExtra("nombre");
         String viaAdministracion = getIntent().getStringExtra("viaAdministracion");
         String cantida = getIntent().getStringExtra("cantida");
