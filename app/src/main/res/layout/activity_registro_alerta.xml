@@ -88,7 +88,7 @@
         android:layout_marginBottom="116dp"
         android:background="@color/darkGreen"
         android:text="Registrar"
-        android:textColor="@color/white"
+        android:textColor="#000000"
         app:cornerRadius="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -137,11 +137,13 @@
 
     <EditText
         android:id="@+id/PT_medicamento_alert"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="344dp"
+        android:layout_height="52dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Name"
+        android:text="Medicamento"
         tools:layout_editor_absoluteX="16dp"
         tools:layout_editor_absoluteY="291dp"
         android:background="@drawable/style_bordes_editext"/>

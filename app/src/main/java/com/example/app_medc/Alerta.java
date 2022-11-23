@@ -2,28 +2,15 @@ package com.example.app_medc;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ProgressBar;
-import android.widget.TextView;
-import android.widget.Toast;
 
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.FirebaseApp;
-import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -38,7 +25,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 //https://www.youtube.com/watch?v=M8sKwoVjqU0
-public class Alarmas extends Fragment {
+public class Alerta extends Fragment {
     EditText nom_med, ingesta, mg, farmaceutica, padecimiento;
     Button btn_med_registro;
     private FirebaseAuth firebaseDatabase;
