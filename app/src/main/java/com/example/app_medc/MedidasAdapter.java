@@ -32,8 +32,6 @@ public class MedidasAdapter extends RecyclerView.Adapter<MedicamentosAdapter.Vie
 
     }
 
-
-
     public MedidasAdapter(ArrayList<MedicamentosRVModal> medicamentosRVModalArrayList, Context context) {
         this.medicamentosRVModalArrayList = medicamentosRVModalArrayList;
         this.context=context;
@@ -47,7 +45,6 @@ public class MedidasAdapter extends RecyclerView.Adapter<MedicamentosAdapter.Vie
         //return new ViewHolder(views);
         return null;
     }
-
     @Override
     public void onBindViewHolder(@NonNull MedicamentosAdapter.ViewHolder holder, @SuppressLint("RecyclerView") int position) {
         MedicamentosRVModal medicamentoRVModal = medicamentosRVModalArrayList.get(position);
@@ -55,7 +52,6 @@ public class MedidasAdapter extends RecyclerView.Adapter<MedicamentosAdapter.Vie
         //holder.farmaceutica.setText(medicamentoRVModal.getFarmaceuticaFabricante());
         //holder.mg_meds.setText(medicamentoRVModal.getCantida());
         //Picasso.get().load(medicamentoRVModal.get)
-
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -99,7 +95,6 @@ public class MedidasAdapter extends RecyclerView.Adapter<MedicamentosAdapter.Vie
                     }
                 });
 
-                // Setting Negative "NO" Button
                 alertDialog.setNegativeButton("Editar", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int which) {
                         // Write your code here to invoke NO event
@@ -114,7 +109,6 @@ public class MedidasAdapter extends RecyclerView.Adapter<MedicamentosAdapter.Vie
                     }
                 });
 
-                // mostrara dialogo
                 alertDialog.show();
 
 

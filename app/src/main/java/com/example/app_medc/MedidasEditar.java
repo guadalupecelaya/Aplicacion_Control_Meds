@@ -127,6 +127,8 @@ public class MedidasEditar extends AppCompatActivity {
         });
     }
 
+
+
     private void eliminarMedicamento(){
         databaseReference.removeValue();
         Toast.makeText(MedidasEditar.this, "Medicamento eliminado", Toast.LENGTH_SHORT).show();

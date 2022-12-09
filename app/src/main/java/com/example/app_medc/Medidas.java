@@ -53,9 +53,6 @@ public class Medidas extends Fragment {
     int number;
 
 
-
-
-
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {

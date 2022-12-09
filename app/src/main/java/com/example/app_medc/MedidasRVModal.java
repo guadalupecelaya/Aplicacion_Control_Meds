@@ -3,6 +3,7 @@ package com.example.app_medc;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+
 public class MedidasRVModal implements Parcelable {
     private String nombreMedicamento;
     private String viaAdministracion;
@@ -38,6 +39,7 @@ public class MedidasRVModal implements Parcelable {
         public MedicamentosRVModal createFromParcel(Parcel in) {
             return new MedicamentosRVModal(in);
         }
+
 
         @Override
         public MedicamentosRVModal[] newArray(int size) {
@@ -105,14 +107,11 @@ public class MedidasRVModal implements Parcelable {
         this.userUD=userUD;
 
     }
-
     @Override
     public int describeContents() {
         return 0;
     }
 
-
-    //userID ??
     @Override
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeString(nombreMedicamento);

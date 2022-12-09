@@ -111,8 +111,6 @@ public class MedicamentosRVModal implements Parcelable {
         return 0;
     }
 
-
-    //userID ??
     @Override
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeString(nombreMedicamento);

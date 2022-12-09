@@ -92,14 +92,7 @@ public class RegistroMedicamento extends AppCompatActivity {
             }
         }
         System.out.println(" ANTES DEL CLICK");
-// LISTA DE MEDICAMENTOS
-      /* recyclerView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                System.out.println(" ENTRA AL CLICK");
-                startActivity(new Intent(RegistroMedicamento.this, MainActivity.class));
-            }
-        });*/
+
 
 
     }

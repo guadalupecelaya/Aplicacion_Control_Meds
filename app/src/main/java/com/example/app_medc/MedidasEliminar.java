@@ -40,8 +40,6 @@ public class MedidasEliminar extends AppCompatActivity {
     FirebaseDatabase firebase_Database;
     DatabaseReference firebaseDatabaseReference;
 
-
-
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -70,7 +68,6 @@ public class MedidasEliminar extends AppCompatActivity {
         padecimiento=findViewById(R.id.PT_uso);
         btn_editar=findViewById(R.id.btn_editar_cuid);
 
-
         btn_eliminar=findViewById(R.id.btn_editar_cuid);
         medicamentosRVModal=getIntent().getParcelableExtra("medicamento");
 
@@ -98,7 +95,6 @@ public class MedidasEliminar extends AppCompatActivity {
         });
 
     }
-
     private void eliminarMedicamento(){
         databaseReference.removeValue();
         Toast.makeText(MedidasEliminar.this, "Medicamento eliminado", Toast.LENGTH_SHORT).show();

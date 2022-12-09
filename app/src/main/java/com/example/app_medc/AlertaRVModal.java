@@ -16,6 +16,7 @@ public class AlertaRVModal implements Parcelable {
 
     }
 
+
     public AlertaRVModal(String hora_inicioA, String fecha_inicioA, String fecha_finalA, String medicamentoA,
                          String enfermedadA, String intervaloA, String alertaID) {
         this.hora_inicioA = hora_inicioA;
